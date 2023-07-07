@@ -1,10 +1,10 @@
 import "./App.css";
-import HomePage from "./pages/HomePage";
-import AddBookPage from "./pages/AddBookPage";
+import HomePage from "./Pages/HomePage";
 import { Routes, Route } from "react-router-dom";
-import BookListPage from "./pages/BookListPage";
+import AddBookPage from "./Pages/AddBookPage";
+import BookListPage from "./Pages/BookListPage";
+import LoginPage from "./Pages/LoginPage";
 import { BookProvider } from "./BookAppContext";
-import LoginPage from "./pages/LoginPage";
 
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
@@ -31,14 +31,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BookProvider>
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/add-book' element={<AddBookPage />} />
-          <Route path='/book-list' element={<BookListPage />} />
-          <Route path='/login' element={<LoginPage />} />
-        </Routes>
-      </BookProvider>
-    </ThemeProvider>
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/add-book' element={<AddBookPage />} />
+      <Route path='/book-list' element={<BookListPage />} />
+      <Route path='/login' element={<LoginPage />} />
+    </Routes>
+  </BookProvider>
+  </ThemeProvider>
   );
 }
 

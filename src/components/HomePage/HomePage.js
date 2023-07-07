@@ -2,7 +2,7 @@ import BookList from "../BookListFolder/BookList";
 import Header from "../Header/Header";
 import Search from "../SearchFolder/Search";
 import "./HomePage.css";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 const StyledHomeWrapper = styled.div`
    display: flex;

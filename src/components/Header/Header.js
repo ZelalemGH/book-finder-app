@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 const StyledHeader = styled(Typography)`
   text-align: center;

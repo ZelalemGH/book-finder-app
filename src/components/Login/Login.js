@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Button, TextField } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 const StyledBox = styled(Box)`
    display: flex;

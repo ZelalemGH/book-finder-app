@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { BookContext } from "../../BookAppContext";
 import { Card, Typography, Skeleton } from "@mui/material";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 const StyledBookDetail = styled(Card)`
   display: flex;

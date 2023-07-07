@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { BookContext } from "../../BookAppContext";
 import { useContext } from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import "./Search.css";
 
 
