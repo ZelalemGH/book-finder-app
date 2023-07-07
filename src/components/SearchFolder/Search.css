@@ -1,0 +1,13 @@
+.fontAwsome-icon{
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #81D4FA;
+    width: 15px;
+    height: 15px;
+    margin: 8px;
+}
+.fontAwsome-icon:hover{
+    transform: scale(1.1);
+    border: 1px solid #333;
+}

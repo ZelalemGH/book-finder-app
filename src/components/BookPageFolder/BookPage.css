@@ -1,0 +1,7 @@
+.book-page{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #b3e5fc;
+    margin: 10px;
+}

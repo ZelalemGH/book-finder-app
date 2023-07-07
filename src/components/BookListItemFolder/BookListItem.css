@@ -1,0 +1,17 @@
+
+h4, p {
+    margin: 0;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+img:hover{
+    transform: scale(1.1);
+}
+
+
+/* px, rem, em */
