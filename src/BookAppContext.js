@@ -11,9 +11,10 @@ export const BookProvider = (props) => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [bookDetail, setBookDetail] = useState({});
-  
+  const [editableBook, setEditableBook] = useState(null);
 
-  const apiUrl = "https://example-data.draftbit.com/books?_Limit=50";
+  const apiUrl =
+    "https://blooming-caverns-92946-ac7a48d2ef0b.herokuapp.com/api/book/getallbooks";
 
   async function getBook() {
     try {
@@ -33,7 +34,10 @@ export const BookProvider = (props) => {
 
   const handleSearch = () => {
     const filteredData = bookInfo.filter(({ title }) => {
-      return title === inputValue;
+      const searchTitle = title.toLowerCase();
+      const searchLowerValue = inputValue.toLowerCase();
+
+      return searchLowerValue === searchTitle;
     });
     console.log("filtered data", filteredData);
     setBookInfo(filteredData);
@@ -53,6 +57,8 @@ export const BookProvider = (props) => {
         handleSearch,
         bookDetail,
         setBookDetail,
+        editableBook,
+        setEditableBook,
       }}
     >
       {props.children}

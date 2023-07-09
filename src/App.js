@@ -31,14 +31,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BookProvider>
-    <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/add-book' element={<AddBookPage />} />
-      <Route path='/book-list' element={<BookListPage />} />
-      <Route path='/login' element={<LoginPage />} />
-    </Routes>
-  </BookProvider>
-  </ThemeProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/add-book/:id?" element={<AddBookPage />} />
+          <Route path="/book-list" element={<BookListPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </BookProvider>
+    </ThemeProvider>
   );
 }
 
