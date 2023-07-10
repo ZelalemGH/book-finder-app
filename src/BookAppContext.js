@@ -12,6 +12,24 @@ export const BookProvider = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [bookDetail, setBookDetail] = useState({});
   const [editableBook, setEditableBook] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      // const decodedToken = jwt_decode(token)
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    //clear the token from the local storage
+    localStorage.removeItem("token");
+    //navigate to the Home page
+    setIsAuthenticated(false);
+  };
 
   const apiUrl =
     "https://blooming-caverns-92946-ac7a48d2ef0b.herokuapp.com/api/book/getallbooks";
@@ -59,6 +77,9 @@ export const BookProvider = (props) => {
         setBookDetail,
         editableBook,
         setEditableBook,
+        isAuthenticated,
+        setIsAuthenticated,
+        handleLogout,
       }}
     >
       {props.children}

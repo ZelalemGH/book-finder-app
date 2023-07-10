@@ -1,17 +1,22 @@
-
-h4, p {
-    margin: 0;
-}
-
 img {
-    width: 300px;
-    height: 300px;
-    transition: all 0.3s ease;
-    margin: 10px;
+  width: 125px;
+  height: 125px;
+  transition: all 0.3s ease;
+  margin: 5px;
 }
-img:hover{
-    transform: scale(1.1);
+img:hover {
+  transform: scale(1.1);
 }
 
+.h4 {
+  margin: 0;
+}
+
+.styled-book-list-item {
+  display: flex;
+  gap: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
 
 /* px, rem, em */

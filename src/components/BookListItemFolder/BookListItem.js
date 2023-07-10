@@ -12,17 +12,13 @@ import {
 import BookDetail from "../BookDetailFolder/BookDetail";
 import { Delete, Edit, Add } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Paper } from "@mui/material";
 
-const StyledCard = styled.div`
-  display: flex;
-  padding: 0.5rem 0.2rem;
-  gap: 10px;
-  margin: 5px 0px;
-  cursor: pointer;
-  width: 100%;
+const StyledCard = styled(Paper)`
+  padding: 0.5rem 0.25rem;
+  margin: 0.5rem;
 `;
 const StyledCardDesktop = styled(Card)`
   display: flex;
@@ -35,18 +31,6 @@ const StyledCardDesktop = styled(Card)`
 `;
 const StyledAccordion = styled(Accordion)`
   margin-top: 1rem;
-`;
-
-const StyledDiv = styled.div`
-  display: flex;
-  padding: 0.5rem 0.2rem;
-  gap: 10px;
-  cursor: pointer;
-  color: blue;
-  text-align: center;
-  flex-direction: column;
-  text-align: center;
-  margin: 5px 0px;
 `;
 
 function BookListItem() {
@@ -92,13 +76,14 @@ function BookListItem() {
                 id="panel1a-header"
               >
                 <StyledCard
+                  className="styled-book-list-item"
                   key={index}
                   onClick={() => setBookDetail(bookInfo[index])}
                 >
-                  <div className="book-content">
+                  <img src={image_url} alt="#" />
+                  <div>
                     <h4>{title}</h4>
                   </div>
-                  <img src={image_url} alt="#" />
                 </StyledCard>
               </AccordionSummary>
               <AccordionDetails>
@@ -114,13 +99,11 @@ function BookListItem() {
               key={index}
               onClick={() => setBookDetail(bookInfo[index])}
             >
-              <StyledDiv>
-                <div>
-                  <h4 className="book-name">{title}</h4>
-                </div>
-                <img src={image_url} alt="#" />
-              </StyledDiv>
-              <div style={{ textAlign: "left", paddingRight: "1 rem" }}>
+              <img src={image_url} alt="#" />
+              <div className="styled-book-list-items">
+                <h4>{title}</h4>
+              </div>
+              <div>
                 <IconButton>
                   <Delete onClick={() => handleDelete(_id)} />
                 </IconButton>
@@ -133,11 +116,13 @@ function BookListItem() {
                     }}
                   />
                 </IconButton>
-                <Link to="/add-book">
-                  <IconButton>
-                    <Add />
-                  </IconButton>
-                </Link>
+                <IconButton>
+                  <Add
+                    onClick={() => {
+                      navigate(`/add-book`);
+                    }}
+                  />
+                </IconButton>
               </div>
             </StyledCardDesktop>
           );

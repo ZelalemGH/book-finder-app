@@ -1,7 +1,7 @@
-.book-page{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    background-color: #b3e5fc;
-    margin: 10px;
+.book-page {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #b3e5fc;
+  margin: 5px;
 }

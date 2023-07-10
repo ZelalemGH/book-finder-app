@@ -1,26 +1,26 @@
 input {
-    padding: 10px 5px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    outline: none;
-    }
-    
-    .book-input-field:hover {
-        transform: scale(1.1); 
-    }
-    
-    button{
-        padding: 10px 5px;
-        background-color: transparent;
-        border-radius: 4px;
-        outline: none;
-        border: 1px solid #333;
-        font-size: 20px;
-        cursor: pointer
-    }
-    
-    button:hover{
-        transform: scale(1.1);
-        background-color: #1976D2;
-        color:#fff;
-    }
+  padding: 10px 5px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  outline: none;
+}
+
+.book-input-field:hover {
+  transform: scale(1.1);
+}
+
+button {
+  padding: 10px 5px;
+  background-color: transparent;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #333;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #1976d2;
+  color: #fff;
+}

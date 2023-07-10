@@ -1,0 +1,39 @@
+.zee-form-container,
+/* .login-form, */
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+}
+.zee-form-container {
+  padding: 2rem;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin: 2rem;
+  background-image: url("https://images.unsplash.com/photo-1687158369081-d21985127d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+}
+
+.register-input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.style-register {
+  text-align: center;
+  font-style: italic;
+  color: blue;
+  margin-top: 15px;
+  text-shadow: 5px 5px 8px red;
+  font-size: 80px;
+}

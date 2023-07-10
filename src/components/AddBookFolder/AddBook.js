@@ -9,10 +9,10 @@ import { useParams } from "react-router-dom";
 const StyledAddBookWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 80%;
   text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1490735891913-40897cdaafd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
   margin: 0 auto;
-
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -61,7 +61,7 @@ const AddBook = () => {
     console.log("post");
     axios
       .post(
-        "https://blooming-caverns-92946-ac7a48d2ef0b.herokuapp.com/api/book/addbook",
+        `https://blooming-caverns-92946-ac7a48d2ef0b.herokuapp.com/api/book/addbook`,
         inputValues
       )
       .then(function (response) {

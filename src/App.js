@@ -5,6 +5,7 @@ import AddBookPage from "./Pages/AddBookPage";
 import BookListPage from "./Pages/BookListPage";
 import LoginPage from "./Pages/LoginPage";
 import { BookProvider } from "./BookAppContext";
+import Register from "./components/RegisterFolder/Register";
 
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/add-book/:id?" element={<AddBookPage />} />
           <Route path="/book-list" element={<BookListPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<Register />} />
         </Routes>
       </BookProvider>
     </ThemeProvider>
