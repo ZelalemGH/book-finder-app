@@ -6,8 +6,8 @@ import BookListPage from "./Pages/BookListPage";
 import LoginPage from "./Pages/LoginPage";
 import { BookProvider } from "./BookAppContext";
 import Register from "./components/RegisterFolder/Register";
-
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+import Footer from "./components/FooterFolder/Footer";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -39,6 +39,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<Register />} />
         </Routes>
+        <Footer />
       </BookProvider>
     </ThemeProvider>
   );

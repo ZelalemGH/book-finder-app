@@ -13,11 +13,11 @@ export const BookProvider = (props) => {
   const [bookDetail, setBookDetail] = useState({});
   const [editableBook, setEditableBook] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      // const decodedToken = jwt_decode(token)
       setIsAuthenticated(true);
     } else {
       setIsAuthenticated(false);
@@ -80,6 +80,8 @@ export const BookProvider = (props) => {
         isAuthenticated,
         setIsAuthenticated,
         handleLogout,
+        favoriteBooks,
+        setFavoriteBooks,
       }}
     >
       {props.children}

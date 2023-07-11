@@ -5,7 +5,6 @@ import { useContext } from "react";
 import styled from "@emotion/styled";
 import "./Search.css";
 
-
 const StyledSearch = styled.div`
   width: 100%;
   display: flex;
@@ -23,18 +22,27 @@ const StyledSearch = styled.div`
 `;
 
 function Search() {
-    const { setInputValue, handleSearch } = useContext(BookContext);
+  const { setInputValue, handleSearch } = useContext(BookContext);
 
-    const handleInputChange = (event) => {
-        setInputValue(event.target.value);
-    };
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
-    return (
-        <StyledSearch>
-            <input className="search-input" type='text' onChange={handleInputChange} />
-            <FontAwesomeIcon className="fontAwsome-icon" icon={faSearch} onClick={handleSearch} />
-        </StyledSearch>
-    );
+  return (
+    <StyledSearch>
+      <input
+        className="search-input"
+        placeholder="Enter Your Book Name"
+        type="text"
+        onChange={handleInputChange}
+      />
+      <FontAwesomeIcon
+        className="fontAwsome-icon"
+        icon={faSearch}
+        onClick={handleSearch}
+      />
+    </StyledSearch>
+  );
 }
 
 export default Search;

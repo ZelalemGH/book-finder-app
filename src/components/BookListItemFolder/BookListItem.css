@@ -2,21 +2,24 @@ img {
   width: 125px;
   height: 125px;
   transition: all 0.3s ease;
-  margin: 5px;
+  box-shadow: 0 5px 10px #d4b996ff;
 }
 img:hover {
   transform: scale(1.1);
 }
 
-.h4 {
+h4 {
   margin: 0;
 }
 
 .styled-book-list-item {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   margin: 5px;
   cursor: pointer;
+  text-align: center;
+  width: 200px;
 }
 
 /* px, rem, em */

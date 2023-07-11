@@ -18,7 +18,6 @@ const StyledHome = styled.div`
   margin-top: 2rem;
   margin: 10px;
   width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1490735891913-40897cdaafd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
 `;
 
 const StyledContainer = styled.div`
@@ -45,6 +44,18 @@ const Home = () => {
       <StyledHeading>
         A room without books is like a body without soul.
       </StyledHeading>
+      <styledUrlImage>
+        <img
+          style={{
+            width: "350px",
+            height: "200px",
+            borderRadius: "10px",
+            margin: "0 auto",
+          }}
+          src="https://media.istockphoto.com/id/1260329669/vector/tiny-male-and-female-characters-reading-and-working-on-laptop-sitting-on-huge-books-pile.jpg?s=1024x1024&w=is&k=20&c=Fo71tRURjjuB2-Bb8ceX-ysNgTP1IZC-o7jBTDNJmVA="
+          alt="#"
+        />
+      </styledUrlImage>
       <StyledContainer>
         <Login />
         <h5 style={{ color: "#555", marginBottom: "1rem" }}>
@@ -53,7 +64,7 @@ const Home = () => {
         <Button
           onClick={handleRegister}
           variant="contained"
-          style={{ margin: "2rem" }}
+          style={{ margin: "0 auto" }}
         >
           Register
         </Button>

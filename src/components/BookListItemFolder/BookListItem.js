@@ -25,9 +25,10 @@ const StyledCardDesktop = styled(Card)`
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.2rem;
-  gap: 10px;
+  gap: 15px;
   margin: 5px 0px;
   cursor: pointer;
+  box-shadow: 0 5px 10px #9e9e9e;
 `;
 const StyledAccordion = styled(Accordion)`
   margin-top: 1rem;
@@ -44,6 +45,7 @@ function BookListItem() {
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const navigate = useNavigate();
+
   const handleDelete = (_id) => {
     axios
       .delete(
@@ -80,7 +82,7 @@ function BookListItem() {
                   key={index}
                   onClick={() => setBookDetail(bookInfo[index])}
                 >
-                  <img src={image_url} alt="#" />
+                  <img style={{ margin: "0 auto" }} src={image_url} alt="#" />
                   <div>
                     <h4>{title}</h4>
                   </div>
