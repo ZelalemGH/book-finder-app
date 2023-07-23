@@ -10,7 +10,7 @@ import {
   Card,
 } from "@mui/material";
 import BookDetail from "../BookDetailFolder/BookDetail";
-import { Delete, Edit, Add } from "@mui/icons-material";
+import { Delete, Edit, Add, FavoriteBorderRounded } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -41,6 +41,8 @@ function BookListItem() {
     setBookInfo,
     editableBook,
     setEditableBook,
+    setFavoriteBooks,
+    favoriteBooks,
   } = useContext(BookContext);
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -67,6 +69,18 @@ function BookListItem() {
 
   console.log("editablebook", editableBook);
 
+  const handleFavorite = (id) => {
+    const favoriteBook = bookInfo.find((book) => book._id === id);
+    if (favoriteBooks.length > 0) {
+      setFavoriteBooks([...favoriteBooks, favoriteBook]);
+    } else {
+      setFavoriteBooks([favoriteBook]);
+    }
+
+    //console.log("favBook", favoriteBook);
+  };
+
+  console.log("favoriteBooks", favoriteBooks);
   return (
     <>
       {isMobile &&
@@ -124,6 +138,9 @@ function BookListItem() {
                       navigate(`/add-book`);
                     }}
                   />
+                </IconButton>
+                <IconButton>
+                  <FavoriteBorderRounded onClick={() => handleFavorite(_id)} />
                 </IconButton>
               </div>
             </StyledCardDesktop>

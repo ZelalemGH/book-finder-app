@@ -9,6 +9,9 @@ import Register from "./components/RegisterFolder/Register";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Footer from "./components/FooterFolder/Footer";
 
+// import FavoriteBook from "./components/FavoriteBookFolder/FavoriteBook";
+import FavoriteBookPage from "./Pages/FavoriteBookPage";
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -38,6 +41,7 @@ function App() {
           <Route path="/book-list" element={<BookListPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<Register />} />
+          <Route path="/favorites" element={<FavoriteBookPage />} />
         </Routes>
         <Footer />
       </BookProvider>

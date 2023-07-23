@@ -12,7 +12,7 @@ const StyledAddBookWrapper = styled.div`
   width: 50%;
   text-align: center;
   background-image: url("https://images.unsplash.com/photo-1490735891913-40897cdaafd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
-  margin: 0 auto;
+  margin: 60px auto;
   @media only screen and (max-width: 768px) {
     width: 100%;
   }

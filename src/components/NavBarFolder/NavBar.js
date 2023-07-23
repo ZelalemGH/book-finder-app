@@ -20,6 +20,7 @@ const navItems = [
   { itemName: "Book-list", to: "/book-list" },
   { itemName: "Add-book", to: "/add-book" },
   { itemName: "Logout", to: "/" },
+  { itemName: "Favorites", to: "/favorites" },
 ];
 
 function NavBar(props) {
@@ -71,7 +72,10 @@ function NavBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block" },
+            }}
           >
             Book Finder App
           </Typography>
