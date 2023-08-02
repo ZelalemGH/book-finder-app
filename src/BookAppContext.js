@@ -50,6 +50,24 @@ export const BookProvider = (props) => {
     getBook();
   }, []);
 
+  const favapiUrl =
+    "https://blooming-caverns-92946-ac7a48d2ef0b.herokuapp.com/api/favoritebook/getallfavoritebooks";
+
+  async function getAllFavoriteBooks() {
+    try {
+      const response = await axios.get(favapiUrl);
+      const favoriteBooksData = response.data;
+      setFavoriteBooks(favoriteBooksData);
+    } catch (error) {
+      console.error("Error fetching favorite books", error);
+    }
+  }
+
+  useEffect(() => {
+    getBook();
+    getAllFavoriteBooks(); // Call the function to get all favorite books
+  }, []);
+
   const handleSearch = () => {
     const filteredData = bookInfo.filter(({ title }) => {
       const searchTitle = title.toLowerCase();

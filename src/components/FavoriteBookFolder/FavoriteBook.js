@@ -4,7 +4,16 @@ import { useContext } from "react";
 import { BookContext } from "../../BookAppContext";
 
 function FavoriteBook() {
-  const { favoriteBooks } = useContext(BookContext);
+  const { favoriteBooks, setFavoriteBooks } = useContext(BookContext);
+
+  const removeFromFavorites = (id) => {
+    const oldFavorite = [...favoriteBooks];
+
+    const newFavorites = oldFavorite.filter((book) => book._id !== id);
+
+    setFavoriteBooks(newFavorites);
+  };
+
   return (
     <div className="favorites">
       {favoriteBooks.map((book, index) => {
@@ -13,6 +22,9 @@ function FavoriteBook() {
             <img src={book.image_url} alt="#" />
             <h2>{book.title}</h2>
             <h3>{book.authors}</h3>
+            <button onClick={() => removeFromFavorites(book._id)}>
+              Remove from Favorites
+            </button>
           </div>
         );
       })}
