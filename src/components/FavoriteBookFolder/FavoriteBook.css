@@ -6,3 +6,8 @@
   justify-items: center;
   text-align: center;
 }
+
+button {
+  color: #ffffff;
+  background-color: #000000;
+}

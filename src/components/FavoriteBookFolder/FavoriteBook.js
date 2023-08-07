@@ -16,18 +16,22 @@ function FavoriteBook() {
 
   return (
     <div className="favorites">
-      {favoriteBooks.map((book, index) => {
-        return (
-          <div key={index}>
-            <img src={book.image_url} alt="#" />
-            <h2>{book.title}</h2>
-            <h3>{book.authors}</h3>
-            <button onClick={() => removeFromFavorites(book._id)}>
-              Remove from Favorites
-            </button>
-          </div>
-        );
-      })}
+      {favoriteBooks?.length > 0 ? (
+        favoriteBooks.map((book, index) => {
+          return (
+            <div key={index}>
+              <img src={book.image_url} alt="#" />
+              <h2>{book.title}</h2>
+              <h3>{book.authors}</h3>
+              <button onClick={() => removeFromFavorites(book._id)}>
+                Remove from Favorites
+              </button>
+            </div>
+          );
+        })
+      ) : (
+        <h1>You don't have any favorite books yet</h1>
+      )}
     </div>
   );
 }
