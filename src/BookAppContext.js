@@ -75,8 +75,14 @@ export const BookProvider = (props) => {
 
       return searchLowerValue === searchTitle;
     });
-    console.log("filtered data", filteredData);
-    setBookInfo(filteredData);
+    if (filteredData.length > 0) {
+      console.log("filtered data", filteredData);
+      setBookInfo(filteredData);
+      setBookDetail(filteredData[0]);
+      setIsError(false); // Reset the error state
+    } else {
+      setIsError(true); // Set the error state if no matches are found
+    }
   };
 
   return (

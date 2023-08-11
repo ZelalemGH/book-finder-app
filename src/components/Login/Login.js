@@ -47,7 +47,7 @@ export default function Login() {
       setIsInvalidCredintial(true);
       setIsAuthenticated(false);
       navigate({
-        pathname: "/book-list",
+        pathname: "/",
       });
     }
   };
