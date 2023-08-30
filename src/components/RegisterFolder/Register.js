@@ -1,7 +1,7 @@
 import "./Register.css";
 import React from "react";
 import { useState, useContext } from "react";
-import { Button, Box, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import styled from "@emotion/styled";
 import axios from "axios";
