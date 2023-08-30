@@ -80,14 +80,12 @@ export default function Login() {
           <TextField
             helperText="Please enter your email"
             id="demo-helper-text-aligned"
-            label="Email"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             helperText="Please enter your password "
             id="demo-helper-text-aligned-no-helper"
-            label="Password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />

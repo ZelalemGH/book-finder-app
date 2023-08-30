@@ -8,8 +8,6 @@ import { BookProvider } from "./BookAppContext";
 import Register from "./components/RegisterFolder/Register";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Footer from "./components/FooterFolder/Footer";
-
-// import FavoriteBook from "./components/FavoriteBookFolder/FavoriteBook";
 import FavoriteBookPage from "./Pages/FavoriteBookPage";
 
 const GlobalStyle = createGlobalStyle`
