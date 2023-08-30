@@ -28,6 +28,23 @@ const StyledContainer = styled.div`
   padding: 2rem;
   background-color: #e1f5fe;
 `;
+const StyledSigUpButton = styled.button`
+  background-color: #ffc400;
+  width: 50%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 30px;
+  color: #37474f;
+  font-size: 15px;
+  font-weight: bold;
+`;
+
+const StyledLogInButton = styled.button`
+  margin: 0 auto;
+  border: none;
+  font-size: 15px;
+  background-color: #00e676;
+`;
 
 function Register() {
   const [username, setUserName] = useState("");
@@ -99,21 +116,13 @@ function Register() {
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button
-              style={{ width: "50%", margin: "0 auto" }}
-              onClick={handleSignup}
-              variant="contained"
-            >
+            <StyledSigUpButton onClick={handleSignup} variant="contained">
               Sign-up
-            </Button>
+            </StyledSigUpButton>
             <h5>Already have an account ? log-in here!</h5>
-            <Button
-              onClick={handleLogIn}
-              variant="contained"
-              style={{ margin: "0 auto" }}
-            >
-              Log-in
-            </Button>
+            <StyledLogInButton onClick={handleLogIn} variant="contained">
+              Log In
+            </StyledLogInButton>
           </StyledContainer>
         </FormControl>
       </StyledBox>

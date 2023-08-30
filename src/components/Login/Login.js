@@ -18,6 +18,15 @@ const StyledBox = styled(Box)`
     width: 100%;
 `;
 
+const StyledSigInButton = styled.button`
+  background-color: #ffc400;
+  border: none;
+  border-radius: 30px;
+  color: #37474f;
+  font-size: 15px;
+  font-weight: bold;
+`;
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -89,9 +98,9 @@ export default function Login() {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleLogin} variant="contained" type="submit">
-            sign-in
-          </Button>
+          <StyledSigInButton onClick={handleLogin} type="submit">
+            Sign In
+          </StyledSigInButton>
         </FormControl>
       </StyledBox>
     </>
