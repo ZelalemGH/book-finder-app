@@ -82,30 +82,37 @@ function Register() {
           <StyledContainer>
             <h2 className="Styled-Sign-up-text">Sign up</h2>
             <TextField
+              style={{ width: "50%", margin: "0 auto" }}
               helperText="Please enter your user name"
               type="email"
               onChange={(e) => setUserName(e.target.value)}
             />
             <TextField
+              style={{ width: "50%", margin: "0 auto" }}
               helperText="Please enter your email"
               type="email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
+              style={{ width: "50%", margin: "0 auto" }}
               helperText="Please enter your password "
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button onClick={handleSignup} variant="contained">
+            <Button
+              style={{ width: "50%", margin: "0 auto" }}
+              onClick={handleSignup}
+              variant="contained"
+            >
               Sign-up
             </Button>
             <h5>Already have an account ? log-in here!</h5>
             <Button
+              onClick={handleLogIn}
               variant="contained"
               style={{ margin: "0 auto" }}
-              onClick={handleLogIn}
             >
-              log-in
+              Log-in
             </Button>
           </StyledContainer>
         </FormControl>
