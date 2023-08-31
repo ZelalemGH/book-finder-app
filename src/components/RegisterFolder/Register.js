@@ -1,7 +1,7 @@
 import "./Register.css";
 import React from "react";
 import { useState, useContext } from "react";
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, Button, Alert } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import styled from "@emotion/styled";
 import axios from "axios";
@@ -39,17 +39,11 @@ const StyledSigUpButton = styled.button`
   font-weight: bold;
 `;
 
-const StyledLogInButton = styled.button`
-  margin: 0 auto;
-  border: none;
-  font-size: 15px;
-  background-color: #00e676;
-`;
-
 function Register() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showEmptyFieldsAlert, setShowEmptyFieldsAlert] = useState(false);
   const { setIsAuthenticated } = useContext(BookContext);
   const navigate = useNavigate();
 
@@ -67,6 +61,7 @@ function Register() {
       });
     } catch (err) {
       console.log(err);
+      setShowEmptyFieldsAlert(true);
     }
   };
 
@@ -97,6 +92,9 @@ function Register() {
             alt="#"
           />
           <StyledContainer>
+            {showEmptyFieldsAlert && (
+              <Alert severity="error">Please fill in all fields.</Alert>
+            )}
             <h2 className="Styled-Sign-up-text">Sign up</h2>
             <TextField
               style={{ width: "50%", margin: "0 auto" }}
@@ -120,9 +118,13 @@ function Register() {
               Sign-up
             </StyledSigUpButton>
             <h5>Already have an account ? log-in here!</h5>
-            <StyledLogInButton onClick={handleLogIn} variant="contained">
+            <Button
+              onClick={handleLogIn}
+              variant="contained"
+              style={{ margin: "0 auto" }}
+            >
               Log In
-            </StyledLogInButton>
+            </Button>
           </StyledContainer>
         </FormControl>
       </StyledBox>
