@@ -1,11 +1,13 @@
 import { useState, useContext } from "react";
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Alert } from "@mui/material";
 import { BookContext } from "../../BookAppContext";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const StyledBox = styled(Box)`
    display: flex;
@@ -31,6 +33,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isInvalidCredintial, setIsInvalidCredintial] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
   const { setIsAuthenticated } = useContext(BookContext);
   const navigate = useNavigate();
 
@@ -67,6 +70,14 @@ export default function Login() {
     handleLogin(userInfo);
   };
 
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <>
       {isInvalidCredintial && (
@@ -95,8 +106,21 @@ export default function Login() {
           <TextField
             helperText="Please enter your password "
             id="demo-helper-text-aligned-no-helper"
-            type="password"
+            type={showPassword ? "text" : "password"}
             onChange={(e) => setPassword(e.target.value)}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
           />
           <StyledSigInButton onClick={handleLogin} type="submit">
             Sign In
