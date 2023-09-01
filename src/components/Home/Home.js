@@ -1,3 +1,4 @@
+import "./Home.css";
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import Login from "../Login/Login";
@@ -44,18 +45,11 @@ const Home = () => {
       <StyledHeading>
         A room without books is like a body without soul.
       </StyledHeading>
-      <styledUrlImage>
-        <img
-          style={{
-            width: "350px",
-            height: "200px",
-            borderRadius: "10px",
-            margin: "0 auto",
-          }}
-          src="https://media.istockphoto.com/id/1260329669/vector/tiny-male-and-female-characters-reading-and-working-on-laptop-sitting-on-huge-books-pile.jpg?s=1024x1024&w=is&k=20&c=Fo71tRURjjuB2-Bb8ceX-ysNgTP1IZC-o7jBTDNJmVA="
-          alt="#"
-        />
-      </styledUrlImage>
+      <img
+        className="responsive-image" // Add a class name for targeting in CSS
+        src="https://cdn.pixabay.com/photo/2017/01/31/00/09/books-2022464_1280.png"
+        alt="#"
+      />
       <StyledContainer>
         <Login />
         <h5 style={{ color: "#555", marginBottom: "1rem" }}>

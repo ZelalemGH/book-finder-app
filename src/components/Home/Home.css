@@ -1,0 +1,15 @@
+/* Default styles for the image */
+.responsive-image {
+  width: 600px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  .responsive-image {
+    width: 100%; /* Resize the image to fit the container's width */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
